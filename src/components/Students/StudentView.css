@@ -1,0 +1,57 @@
+.card{
+    width: 100%;
+    height: 100vh;
+    background: rgb(239, 213, 239);
+}
+.card-deatails{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    height: 300px;
+    background: rgb(233, 230, 226);
+    margin-left: 45px;
+    margin-top: 25px;
+    padding-left: 50px;
+    padding-top: 30px;
+}
+/* .details{
+    padding-right: 10px;
+    margin-right: ;
+} */
+.card-deatails .image2{
+    width: 100px;
+    height: 100px;
+}
+.card-deatails .image2 img{
+    width: 100%;
+    height: 100%
+}
+.flex{
+    display: flex;
+    text-align: center;
+    color: blue;
+
+}
+.flex p{
+    margin-top: -5px;
+    color: black;
+    margin-left: 10px;
+    
+}
+.card-deatails .btn{
+    margin-top: 200px;
+   
+    
+}
+.btn .update{
+    margin-right: 10px;
+}
+.btn button{
+    border-radius: 3px;
+}
+.course-content{
+    width: 600px;
+    height: auto;
+    margin-left: 45px;
+    background: red;
+}

@@ -1,0 +1,14 @@
+.updateform{
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    background: wheat;
+}
+.form-content{
+    background:white;
+    width: 800px;
+    height: auto;
+    padding: 30px;
+    border-radius: 7px;
+
+}

@@ -1,0 +1,10 @@
+.searchbar{
+    position: relative;
+}
+.searchicon{
+    position: absolute;
+    left:7px;
+    top: 5px;
+    font-size: 17px;
+
+}

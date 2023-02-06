@@ -1,0 +1,43 @@
+.course-name{
+    width: 100%;
+    height: 100vh;
+    margin-top: 20px;
+    
+    
+}
+.create-course{
+    width: 800px;
+    height: 400px;
+    background: rgb(249, 241, 228);
+    position: relative;
+}
+.form{
+    width: 400px;
+    margin-left: 40px;
+    margin-top: 20px;
+    
+}
+.inputinner{
+    height: 320px;
+    width: 100%;
+}
+.btninner1{
+    height: 76px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.btnouter1{
+    width: 100%;
+    height: 75px;
+    
+}
+.button{
+    width: 163px;
+    height: 50px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}

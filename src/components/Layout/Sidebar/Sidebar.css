@@ -1,0 +1,33 @@
+.sidebarbody{
+    width: 200px;
+    height: 100vh;
+    background: rgb(203, 203, 196);
+  
+}
+.sidebarcontet {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+
+}
+.sidebarcontet button{
+    background: none;
+    border: none;
+    text-align: left;
+    position: relative;
+}
+.sidebarcontet button span{
+    margin-right: 10px;
+}
+.sidebarcontet .downarow{
+  position: absolute;
+  right: 0;
+  font-size: 15px;
+}
+.sidebarcontet ul li{
+    font-size: 14px;
+    font-weight: 400;
+    list-style: none;
+   
+    color: black;
+}

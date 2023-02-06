@@ -1,0 +1,117 @@
+.dashboard{
+    width: 100%;
+    height: 100vh;
+    background: lightblue;
+}
+.dashbody{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.card {
+    width: 400px;
+    height: 200px;
+    border-radius: 7px;
+}
+.dashboard h5{
+    color: gray;
+}
+.firstpart{
+    background: rgba(238, 130, 238, 0.516);
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+.firstpart h6,.firstpart h5{
+    color: blue;
+}
+
+.firstpart .image {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+}
+.secondpart{
+    background: rgba(255, 255, 255, 0.923);
+    width: 100%;
+    height: 50%;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+}
+.secondpart .imageid{
+    width:80px;
+    height: 80px;
+    position: absolute;
+    border: 3px solid rgb(250, 246, 246);
+    border-radius: 50%;
+    top: -40px;
+    left: 0;
+
+   
+}
+.secondpart .imageid img{
+ width: 100%;
+ height: 100%;
+ border-radius: 50%;
+}
+.secondpart .seccontent{
+    padding-top: 20px;
+}
+.secondpart .name{
+    padding-top: 45px;
+}
+.secondpart .seccontent h6{
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.secondpart .seccontent p{
+    font-size: 12px;
+}
+.seccontent button{
+    padding-top: 0;
+    margin-top:-100%;
+    color: white;
+    background:blue;
+}
+.cardgroup{
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+ 
+
+}
+.cardgroup .icons{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: blueviolet;
+    font-size: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+    
+}
+.availablecourse{
+    width: 400px;
+    height: 95px;
+    background: white;
+    border-radius: 7px;
+    position: relative;
+    padding-left: 15px;
+    font-size:15px
+}
+.availablecourse h5{
+    font-size: 20px;
+}
