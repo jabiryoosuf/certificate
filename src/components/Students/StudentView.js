@@ -10,7 +10,7 @@ import Layout from '../Layout/Layout'
 const StudentView = () => {
   return (
     <Layout>
-    <div className='card'>
+    <div className='cardsingle'>
         <h5>STUDENT VIEW</h5>
       <div className='card-deatails'>
          <div className="details">

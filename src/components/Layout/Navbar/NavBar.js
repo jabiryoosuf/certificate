@@ -5,8 +5,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import "./Navbar.css";
 import {BiSearchAlt} from 'react-icons/bi'
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
+import { logoutApi } from '../../../store/loginSlice';
+import { useDispatch } from 'react-redux';
 
 const NavBar = () => {
+const navigate = useNavigate()
+const dispatch = useDispatch()
+
+const handlelogout =()=>{
+    dispatch(logoutApi({navigate}))
+  }
   return (
     <div>
     <Navbar bg="light" expand="lg">
@@ -27,6 +36,7 @@ const NavBar = () => {
             />
          
           </Form>
+          <button onClick={()=>handlelogout()}>logout</button>
               
             
           </Nav>

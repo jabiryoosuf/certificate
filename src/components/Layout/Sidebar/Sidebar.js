@@ -34,7 +34,7 @@ const Sidebar = () => {
            <button onClick={()=>handlclick('category')}><span><BiCategory/></span>Courses Category<span className='downarow'><AiFillCaretDown/></span></button>
            {view ['category']&&(
            <ul>
-           <Link to={'/course'} style={{textDecoration:'none'}}><li>All Courses Category</li></Link>
+           <Link to={'/Coursecategory'} style={{textDecoration:'none'}}><li>All Courses Category</li></Link>
             <Link to={'/createcoursecategory'} style={{textDecoration:'none'}}><li>Create Courses Category</li></Link>
            </ul>
            )}
