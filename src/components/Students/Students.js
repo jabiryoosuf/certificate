@@ -5,9 +5,10 @@ import Layout from "../Layout/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { StudentsApi } from "../../store/studentSlice";
 import { map } from "lodash";
+import { Link, useParams } from "react-router-dom";
+
 const Students = () => {
   const dispatch = useDispatch();
-
   const { allStudents } = useSelector((state) => ({
     allStudents: state.students.allStudents,
   }));
@@ -41,7 +42,7 @@ const Students = () => {
               </tr>
             </thead>
             <tbody>
-              {map(all,(item) => (
+              {map(all, (item) => (
                 <tr>
                   <td></td>
                   <td>{item.full_name}</td>
@@ -52,7 +53,9 @@ const Students = () => {
                   <td>{item.designation}</td>
                   <td></td>
                   <td>
-                    <button>view</button>
+                    <Link to={`/studentview/${item.id}`}>
+                      <button>view</button>
+                    </Link>
                   </td>
                 </tr>
               ))}

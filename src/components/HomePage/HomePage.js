@@ -13,6 +13,7 @@ import { FcGoogle } from "react-icons/fc";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
 
+
 function HomePage() {
   return (
     <div className="homepage-body">
@@ -142,6 +143,7 @@ function HomePage() {
           </Col>
         </Row>
       </Container>
+     
     </div>
   );
 }

@@ -3,26 +3,27 @@ import './Course.css'
 import "../Students/StudentView.css"
 import Table from 'react-bootstrap/Table';
 import {BsFillPencilFill} from "react-icons/bs"
-import {MdCancel} from 'react-icons/md'
 import Layout from '../Layout/Layout';
 import {map} from "lodash"
 import { useDispatch, useSelector } from 'react-redux';
 import { coursecategoryApi } from '../../store/coursecategorySlice';
+import { Link} from 'react-router-dom';
 
 const CourseCategory = () => { 
+  const dispatch = useDispatch();
  
  const { allcategory } = useSelector((state)=>({
   allcategory:state.category.allcategory
  }))
  console.log(allcategory);
- 
-  const dispatch = useDispatch();
+
 
   useEffect(()=>{
     dispatch(coursecategoryApi())
   },[])
   const res = allcategory.results;
   console.log(res);
+
   return (
     <Layout>
     <div>
@@ -48,7 +49,7 @@ const CourseCategory = () => {
        <td>{item.designation}</td>
        
        
-       <td><BsFillPencilFill className='me-3'/><MdCancel/></td>
+       <Link to={`/coursecategoryview/${item.id}`}> <td><BsFillPencilFill  className='me-3'/></td></Link>
      </tr>
      ))}
    </tbody>

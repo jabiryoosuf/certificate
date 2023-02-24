@@ -14,7 +14,7 @@ const Sidebar = () => {
   return (
     <div className='sidebarbody'>
         <div className="sidebarcontet">
-           <h6><span><BiHomeCircle/></span> Dash Board</h6>
+        <Link to={'/dashboard'} style={{textDecoration:'none'}}><h6><span> <BiHomeCircle/></span> Dash Board </h6> </Link>
            <button onClick={()=>handlclick('student')}><span><BsPersonCircle/></span>Students<span className='downarow'><AiFillCaretDown/></span></button> 
            {view ['student'] &&  (
             <ul>

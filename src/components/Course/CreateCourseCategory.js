@@ -1,10 +1,30 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import React from "react";
+import React, { useState } from "react";
 import './CreateCourse.css'
 import Layout from "../Layout/Layout";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { createcategoryApi } from "../../store/coursecategorySlice";
 
 const CreateCourseCategory = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+   const[update,setUpdate] = useState({});
+   const handle=(e)=>{
+    setUpdate({
+      ...update,
+      [e.target.name]:e.target.value,
+    })
+   }
+
+console.log(update);
+
+  const handlecreatecategory =(e)=>{
+    e.preventDefault();
+    dispatch(createcategoryApi({update,navigate}))
+
+  }
   return (
     <Layout>
     <div className="course-name">
@@ -14,12 +34,12 @@ const CreateCourseCategory = () => {
   <Form className="form">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Course Category :</Form.Label>
-        <Form.Control type="text" placeholder="Enter a course Category" />
+        <Form.Control onChange={(e)=>handle(e)} name="course_category_name" type="text" placeholder="Enter a course Category" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Designation :</Form.Label>
-        <Form.Control type="password" placeholder="Enter a designation" />
+        <Form.Control onChange={(e)=>handle(e)} name="designation" type="text" placeholder="Enter a designation" />
       </Form.Group>
       
       
@@ -32,7 +52,7 @@ const CreateCourseCategory = () => {
         Back
       </Button></div>
       <div>
-      <Button className="primary" type="submit">
+      <Button onClick={handlecreatecategory }className="primary" type="submit">
         Create
       </Button></div></div>
       </div>

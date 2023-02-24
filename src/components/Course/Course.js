@@ -2,21 +2,22 @@ import React, { useEffect } from 'react'
 import './Course.css'
 import "../Students/StudentView.css"
 import Table from 'react-bootstrap/Table';
-import {BsFillPencilFill} from "react-icons/bs"
-import {MdCancel} from 'react-icons/md'
 import Layout from '../Layout/Layout';
 import {map} from "lodash"
 import { useDispatch, useSelector } from 'react-redux';
 import {courseApi } from "../../store/courseSlice";
+import { Link } from 'react-router-dom';
+import {GrView} from "react-icons/gr"
 
 const Course = () => {
 
   const dispatch = useDispatch();
 
 
+
   const { allcourse } = useSelector((state) =>({
    allcourse:state.course.allcourse,
-  }));
+  }));  
 
   console.log(allcourse);
 
@@ -25,7 +26,9 @@ const Course = () => {
   },[]);
   const res = allcourse.results;
   console.log(res);
-
+  // const handledelate=(id)=>{
+  // dispatch(deletecourseApi({id}))
+  // }
   return (
     <Layout>
     <div>
@@ -52,7 +55,8 @@ const Course = () => {
           <td>{item.course_name}</td>
           <td>{item.duration}</td>
           <td>{item.course_category}</td>
-          <td><BsFillPencilFill className='me-3'/><MdCancel/></td>
+          <Link to={`/courseview/${item.id}`} > <td>
+             <GrView className='me-3'/></td></Link> 
         </tr>
         ))}
       </tbody>

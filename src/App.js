@@ -10,13 +10,17 @@ import StudentView from './components/Students/StudentView';
 import Course from './components/Course/Course';
 import CreateCourse from './components/Course/CreateCourse';
 import UpdateCourse from './components/Course/UpdateCourse';
+import CourseView from './components/Course/CourseView';
 import CreateCourseCategory from './components/Course/CreateCourseCategory';
 import UpdateCourseCategory from './components/Course/UpdateCourseCategory';
 import CourseCategory from './components/Course/CourseCategory';
+import CourseCategoryView from './components/Course/CourseCategoryView';
 import Layout from './components/Layout/Layout';
 import {
   BrowserRouter as Router, Route, Routes,
 } from "react-router-dom";
+// import Certificate from './components/Certificate';
+import Certificatemain from './components/Certificatemain';
 
 
 function App() {
@@ -30,13 +34,16 @@ function App() {
         <Route path='/allstudents' element={<Students/>}/>
         <Route path='/updatestudents' element={<UpdateStudent/>}/>
         <Route path='/createstudents' element={ <CreateStudent/>}/>
-        <Route path='/studentview' element={ <StudentView/>}/>
+        <Route path='/studentview/:id' element={ <StudentView/>}/>
         <Route path='/course' element={ <Course/>}/>
         <Route path='/createcourse' element={ <CreateCourse/>}/>
-        <Route path='/updatecourse' element={ <UpdateCourse/>}/>
+        <Route path='/updatecourse/:id' element={ <UpdateCourse/>}/>
+        <Route path='/courseview/:id' element={ <CourseView/>}/>
         <Route path='/createcoursecategory' element={ <CreateCourseCategory/> }/>
-        <Route path='/updatecoursecategory' element={  <UpdateCourseCategory/>}/>
+        <Route path='/updatecoursecategory/:id' element={  <UpdateCourseCategory/>}/>
+        <Route path='/coursecategoryview/:id' element={ <CourseCategoryView/>}/>
         <Route path='/Coursecategory' element={  <CourseCategory/>}/>
+        <Route path='/Certificatemain/:id' element={ <Certificatemain/>}/>
       </Routes>
      </Router>
       

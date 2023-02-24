@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import { axiosApi } from "./axios-method";
 
-export const loginApi = createAsyncThunk("login/loginApi", async (input) => {
+export const loginApi = createAsyncThunk("auth/loginApi", async (input) => {
   const result = await axiosApi.post("/account/login/",input.login);
   console.log(result);
   if (result?.data?.token) {
@@ -10,7 +11,7 @@ export const loginApi = createAsyncThunk("login/loginApi", async (input) => {
   }
   return result.data;
 });
-export const logoutApi = createAsyncThunk("logout/logoutApi",async (input) =>{
+export const logoutApi = createAsyncThunk("auth/logoutApi",async (input) =>{
     const token=localStorage.getItem("token")
     const result = await axiosApi.post(  "/account/logout/", token );
         localStorage.removeItem("token")
@@ -21,7 +22,7 @@ const initialState = {
   token: "",
 };
 const loginSlice = createSlice({
-  name: "login",
+  name: "auth",
   initialState,
   reducers: {},
   extraReducers: {
@@ -31,17 +32,19 @@ const loginSlice = createSlice({
     [loginApi.fulfilled]: (state, action) => {
       console.log("login fullfilled");
       state.token = action.payload.token;
+      toast.success("login succes")
     },
     [loginApi.rejected]: (state, action) => {
       console.log("login rejected");
+      toast.error("login failed")
     },
     [logoutApi.pending]: (state, action) => {
         console.log("logout pending");
     } ,
-    [logoutApi.pending]: (state, action) => {
+    [logoutApi.fulfilled]: (state, action) => {
         console.log("logout fullfilled");
     } , 
-    [logoutApi.pending]: (state, action) => {
+    [logoutApi.rejected]: (state, action) => {
         console.log("logout rejected");
 },
 
